@@ -1,8 +1,16 @@
 from tkinter import *
 import webbrowser
 
+# window size and position variables
 windowSizeX = "300"
 windowSizeY = "300"
+
+quitButtonX = 265
+quitButtonY = 270
+
+internetButtonX = 100
+internetButtonY = 100
+
 
 # prints out the registered browsers I can use
 # print(webbrowser._tryorder)
@@ -28,11 +36,11 @@ class Window(Frame):
 
         # exit button
         quitButton = Button(self, text="Exit", command=self.client_exit)
-        quitButton.place(x=270, y=270)
+        quitButton.place(x=quitButtonX, y=quitButtonY)
 
         # start firefox/chrome browser button
         internetButton = Button(self, text="Open Browser", command=self.open_browser)
-        internetButton.place(x=150, y=150)
+        internetButton.place(x=internetButtonX, y=internetButtonY)
 
     # browser button command
     def open_browser(self):
