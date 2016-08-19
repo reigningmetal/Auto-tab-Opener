@@ -8,8 +8,11 @@ windowSizeY = "300"
 quitButtonX = 265
 quitButtonY = 270
 
-internetButtonX = 100
-internetButtonY = 100
+entertainTabsButtonX = 100
+entertainTabsButtonY = 100
+
+workingTabsButtonX = 50
+workingTabsButtonY = 50
 
 
 # prints out the registered browsers I can use
@@ -22,6 +25,8 @@ firefoxBrowser = webbrowser.get(firefoxPath)
 # web links to be opened in tabs
 urlYoutube = "https://www.youtube.com/"
 urlReddit = "https://us.reddit.com/"
+urlWorkReddit = "https://us.reddit.com/"
+urlStackOverflow = "http://stackoverflow.com/"
 
 
 class Window(Frame):
@@ -38,15 +43,25 @@ class Window(Frame):
         quitButton = Button(self, text="Exit", command=self.client_exit)
         quitButton.place(x=quitButtonX, y=quitButtonY)
 
-        # start firefox/chrome browser button
-        internetButton = Button(self, text="Open Browser", command=self.open_browser)
-        internetButton.place(x=internetButtonX, y=internetButtonY)
+        # start firefox / chrome entertainment tabs button
+        entertainTabsButton = Button(self, text="Entertainment Mode", command=self.entertain_Button)
+        entertainTabsButton.place(x=entertainTabsButtonX, y=entertainTabsButtonY)
+
+        # start firefox / chrome working tabs button
+        workingTabsButton = Button(self, text="Working Mode", command=self.working_Button)
+        workingTabsButton.place(x=workingTabsButtonX, y=workingTabsButtonY)
 
     # browser button command
-    def open_browser(self):
-        print("Open browser button pressed")
+    def entertain_Button(self):
+        print("entertainment button pressed")
         firefoxBrowser.open(urlYoutube)
         firefoxBrowser.open(urlReddit)
+
+    # browser button command 2
+    def working_Button(self):
+        print("working button pressed")
+        firefoxBrowser.open(urlWorkReddit)
+        firefoxBrowser.open(urlStackOverflow)
 
     def client_exit(self):
         print("Exit button pressed")
