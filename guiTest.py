@@ -27,6 +27,7 @@ urlYoutube = "https://www.youtube.com/"
 urlReddit = "https://us.reddit.com/"
 urlWorkReddit = "https://us.reddit.com/"
 urlStackOverflow = "http://stackoverflow.com/"
+urlGithub = "https://github.com/"
 
 
 class Window(Frame):
@@ -51,6 +52,9 @@ class Window(Frame):
         workingTabsButton = Button(self, text="Working Mode", command=self.working_Button)
         workingTabsButton.place(x=workingTabsButtonX, y=workingTabsButtonY)
 
+        w = Label(self, text="testing")
+        w.place(anchor="s")
+
     # browser button command
     def entertain_Button(self):
         print("entertainment button pressed")
@@ -62,7 +66,9 @@ class Window(Frame):
         print("working button pressed")
         firefoxBrowser.open(urlWorkReddit)
         firefoxBrowser.open(urlStackOverflow)
+        firefoxBrowser.open(urlGithub)
 
+    # quit button command
     def client_exit(self):
         print("Exit button pressed")
         exit()
